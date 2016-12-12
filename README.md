@@ -41,5 +41,8 @@ Repositório/
 |   └── graphPrimer.py
 ├── BCGs_de_Bruijn_Colorido/
 │   ├── README.md
-|   └── bcg_de_bruijn.snake
+│   ├── raw_data/
+│   |    ├── sample.1.fastq
+│   |    ├── sample.2.fastq
+|   └── bcg_de_bruijn.snakefile.py
 ```
