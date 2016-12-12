@@ -1,0 +1,45 @@
+{
+    "references": {
+        "genome": "/array/rodtheo/A_terreus/GENOME/CADRE/Aspergillus_terreus.CADRE.29.dna.genome.fa"
+    },
+    "samples": {
+        "ATCC": ["ATCC"],
+        "BU27": ["BU27"],
+        "BU33": ["BU33"],
+        "BU35": ["BU35"],
+        "U22": ["U22"],
+        "U9": ["U9"],
+        "U10": ["U10"],
+        "U26": ["U26"]
+    },
+    "units": {
+        "ATCC":
+            ["/array/rodtheo/A_terreus/Samples/ATCC.1.trimmed.paired.fq", "/array/rodtheo/A_terreus/Samples/ATCC.2.trimmed.paired.fq"],
+        "BU27":
+            ["/array/rodtheo/A_terreus/Samples/BU27.1.trimmed.paired_new.fq", "/array/rodtheo/A_terreus/Samples/BU27.2.trimmed.paired_new.fq"],
+        "BU33":
+            ["/array/rodtheo/A_terreus/Samples/BU33.1.trimmed.paired.fq", "/array/rodtheo/A_terreus/Samples/BU33.2.trimmed.paired.fq"],
+        "BU35":
+            ["/array/rodtheo/A_terreus/Samples/BU35.1.trimmed.paired.fq_new.fq", "/array/rodtheo/A_terreus/Samples/BU35.2.trimmed.paired.fq_new.fq"],
+        "U22":
+            ["/array/rodtheo/A_terreus/Samples/U22.1.trimmed.paired.fq", "/array/rodtheo/A_terreus/Samples/U22.2.trimmed.paired.fq"],
+        "U9":
+            ["/array/rodtheo/A_terreus/Samples/U9.1.trimmed.paired.fq", "/array/rodtheo/A_terreus/Samples/U9.2.trimmed.paired.fq"],
+        "U10":
+            ["/array/rodtheo/A_terreus/Samples/U10.1.trimmed.paired.fq", "/array/rodtheo/A_terreus/Samples/U10.2.trimmed.paired.fq"],
+        "U26":
+            ["/array/rodtheo/A_terreus/Samples/U26.1.trimmed.paired.fq", "/array/rodtheo/A_terreus/Samples/U26.2.trimmed.paired.fq"]
+    },
+    "known_variants": {
+        "dbsnp": "/array/rodtheo/A_terreus/nih/variant_calling/genome_firstPASS/filtered/ATCC_HQ.vcf",
+        "hapmap": "",
+        "g1k": "",
+        "omni": "",
+        "mills": ""
+    },
+    "gatk": "java -jar /home/rodtheo/GATK/GenomeAnalysisTK.jar",
+    "platform": "Illumina",
+    "heterozygosity": 0.001,
+    "indel_heterozygosity": 1.25E-4,
+    "picard": "/home/rodtheo/picard-tools/picard-tools-1.126/picard.jar"
+}
