@@ -5,7 +5,7 @@ A estrutura do repositório segue a dos tópicos da dissertação. Isto é, cada
 
 Estrutura do repo:
 
-<!-- language: lang-none -->
+```
 bootstrap/
 ├── less/
 ├── js/
@@ -15,4 +15,5 @@ bootstrap/
 │   ├── js/
 │   └── fonts/
 └── docs/
-    └── examples/
+    └── examples/
+```
