@@ -17,7 +17,7 @@ Repositório/
 ├── Montagem_de_novo/
 │   ├── pipeline.snakefile.py
 │   ├── fgmp.rules
-│   ├── Visualização_Circus/
+│   ├── Visu_Circos/
 │   |    ├── README.md
 │   |    ├── scripts/
 │   |    |    ├── index.html
@@ -30,10 +30,15 @@ Repositório/
 │   |    |    |     └── tracks.css
 │   |    |    ├── db/
 │   |    |    |     ├── Sample.json
-│   |    |    |     └── Sample_genomes.css
+│   |    |    |     └── Sample_genomes.json
 ├── POA_primers/
 │   ├── README.md
-|   └── poa_primer.py
+│   ├── src/
+│   |    ├── poaV2.tar.gz
+│   ├── POA.py
+│   ├── GraphPOA.py
+│   ├── primers.snakefile.py
+|   └── graphPrimer.py
 ├── BCGs_de_Bruijn_Colorido/
 │   ├── README.md
 |   └── bcg_de_bruijn.snake
