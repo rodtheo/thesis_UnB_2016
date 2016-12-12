@@ -15,7 +15,8 @@ Repositório/
 │   ├── buscar_cov_anomalas.py
 │   └── config.json
 ├── Montagem_de_novo/
-│   ├── pipeline.snake
+│   ├── pipeline.snakefile.py
+│   ├── fgmp.rules
 │   ├── Visualização_Circus/
 │   |    ├── README.md
 │   |    ├── scripts/
