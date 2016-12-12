@@ -1,0 +1,25 @@
+{
+  "genome_radius_inner": 275,
+  "genome_radius_outer": 295,
+  "radius": 5,
+  "w": 800,
+  "h": 800,
+  "factor": 1,
+  "factorLegend": 0.85,
+  "TranslateX": 80,
+  "TranslateY": 100,
+  "ExtraWidthX": 200,
+  "ExtraWidthY": 200,
+  "radians": 6.283185307179586,
+  "spacing": 5000,
+  "legend_spacing": 5,
+  "min_radians": 0.006283185307179587,
+  "dragresize": true,
+  "movecursor": false,
+  "genomes": {
+    "gbAF141924.1ATLOVBSGC1": 12000,
+    "gbAF151722.1": 11561,
+    "gbAF141925.1ATLOVBSGC2": 43328,
+    "NODE_92_length_76397_cov_3.22347_ID_183": 76397
+  }
+}

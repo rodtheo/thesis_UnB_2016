@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>GenomeD3Plot Circularplot Example</title>
+    <script src="../d3/d3.min.js"></script>
+    <script src="../d3/d3-tip.js"></script>
+    <script src="../d3/labeler.js"></script>
+    <script type="text/javascript" src="../d3/jquery-1.12.0.min.js"></script>
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0;
+        font-size: 15px;
+        font-family: "Helvetica Neue", Helvetica;
+      }
+
+      #circularchart {
+        position: relative;
+        top: 50px;
+        left: 150px;
+      }
+
+    </style>
+    <link href="js/tracks.css" rel="stylesheet">
+  </head>
+  <body>
+<script src="js/d3.min.js"></script>
+<script src="js/labeler.js"></script>
+<script src="js/d3-tip.js"></script>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/circularplot2.js"></script>
+ <div style="white-space: pre-wrap;">
+  O circos abaixo é iterativo. A funcionalidade dele é explorar informações inerentes ao mapeamento sendo que existem 4 tracks principais (sequências). Estas são indicadas no círculo concêntrico interno. Temos um contig (em vermelho) denominado NODE_92... (para verificar o nome repouse o mouse sobre a track) e 3 tracks contendo os genes putativamente relacionados à produção de lovastatina. Funcionalidades:
+  <ol type="i">
+    <li>Podemos verificar o nível de similaridade entre 2 sequências deixando o mouse sobre os arcos que as ligam.</li>
+    <li>Para checar se um gene anotado na sequência (casca externa) está contido num bloco sintênico é só manter o mouse sobre o gene. Os genes são as tracks identificadas pelo nome acima dos contigs.</li>
+  </ol>
+</div>
+<div id="example"> <div id="circularchartATCC"></div></div>
+
+<script>
+var genomesize = 301476924;
+
+var circularlayout = {genomesize: genomesize,
+          container: "#circularchartATCC",
+          dblclick: "doubleClick",
+                      w: 750, h: 750
+        };
+
+var file_genome = 'db/Sample_genomes.json';
+
+var circularTrackDefaults = [];
+
+$.ajax({
+  url: file_genome,
+  async: false,
+  dataType: 'json',
+  success: function(json){
+    circularTrackDefaults = json;
+  }
+});
+
+var file_tracks = 'db/Sample.json';
+
+var tracks = [];
+
+$.ajax({
+  url: file_tracks,
+  async: false,
+  dataType: 'json',
+  success: function(json){
+    tracks = json;
+  }
+});
+
+var cTrack = new circularTrack(circularlayout, tracks);
+
+function doubleClick(plotid, bp) {
+    if('undefined' !== typeof linearTrack) {
+        var halfBP = (cTrack.brushEndBP - cTrack.brushStartBP) /2;
+
+	var newStart = Math.max(0, (bp - halfBP));
+	var newEnd = Math.min(genomesize, (bp + halfBP));
+
+        console.log("Moving zoom area to: " + newStart + ", " + newEnd);
+        cTrack.moveBrushbyBP(newStart,
+                             newEnd);
+        linearTrack.update(newStart, newEnd);
+    } else {
+      alert("Double click! From " + plotid + " at " + bp + " bp" )
+      console.log("double click!");
+      console.log(plotid);
+      console.log(bp);
+
+    }
+}
+
+</script> 
+</body>

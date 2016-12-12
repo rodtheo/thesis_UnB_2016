@@ -1,0 +1,46 @@
+import os
+
+BASE=os.getcwd()
+N_THREADS=13
+SAMPLES = ["ATCC","BU27","BU33","BU35","U22","U10","U9"]
+GENOME_PATH = "/array/rodtheo/A_terreus/RNA-SEQ/scaffold/"
+SAMP=["SRR2409422","SRR2409423","SRR2409424","SRR2409425"]
+FGMP="/array/rodtheo/programas/FGMP.v.1.0/1.0"
+
+os.environ["FGMP"]=FGMP
+#os.environ["PERL5LIB"]="$PERL5LIB:{}/lib".format(os.environ.get("PERL5LIB"),FGMP)
+
+rule all:
+	input:
+		expand("{samples}.SPADES/spades_output/scaffolds.fasta.unfiltered.renamed.hmmsearch.full_report", samples=SAMPLES),
+		expand("{samples}.SPADES/spades_output/scaffolds.fasta",samples=SAMPLES),
+		expand("{samples}.SPADES/spades_output/fgmp.config",samples=SAMPLES)
+
+rule conf:
+	input:
+		"{samples}.SPADES/spades_output/scaffolds.fasta"
+	output:
+		"{samples}.SPADES/spades_output/fgmp.config"
+	params:
+		base="{samples}.SPADES/spades_output/"
+	run:
+		with open("{}/{}".format(BASE,output), "w") as outconf:
+			outconf.write("FGMP={}\n".format(FGMP))
+                        outconf.write("WRKDIR={}/{}\n".format(BASE,params.base))
+                        outconf.write("TMP={}/{}".format(BASE,params.base))
+
+rule fgmp:
+	input:
+		conf="{samples}.SPADES/spades_output/fgmp.config"
+	output:
+		fgmp="{samples}.SPADES/spades_output/scaffolds.fasta.unfiltered.renamed.hmmsearch.full_report"
+	params:
+		base="{samples}.SPADES/spades_output/",FGMP=FGMP
+	threads:
+		N_THREADS
+	log:
+		"log"
+	run:
+		os.chdir("./{}".format(params.base))
+		shell('perl {params.FGMP}/src/fgmp.pl -g scaffolds.fasta -T {threads} 2> {log}')
+		os.chdir("{}".format(BASE))
