@@ -6,14 +6,34 @@ A estrutura do repositório segue a dos tópicos da dissertação. Isto é, cada
 Estrutura do repo:
 
 ```
-bootstrap/
-├── less/
-├── js/
-├── fonts/
-├── dist/
-│   ├── css/
-│   ├── js/
-│   └── fonts/
-└── docs/
-    └── examples/
+Repositório/
+├── Mapeamento_SNP_Call/
+│   ├── README.md
+│   ├── Samples/
+│   ├── trimming.snakefile.py
+│   ├── pipeline.snakefile.py
+│   ├── buscar_cov_anomalas.py
+│   └── config.json
+├── Montagem_de_novo/
+│   ├── pipeline.snake
+│   ├── Visualização_Circus/
+│   |    ├── README.md
+│   |    ├── scripts/
+│   |    |    ├── index.html
+│   |    |    ├── js/
+│   |    |    |     ├── circularplot2.js
+│   |    |    |     ├── d3-tip.js
+│   |    |    |     ├── d3.min.js
+│   |    |    |     ├── jquery-1.12.0.min.js
+│   |    |    |     ├── labeler.js
+│   |    |    |     └── tracks.css
+│   |    |    ├── db/
+│   |    |    |     ├── Sample.json
+│   |    |    |     └── Sample_genomes.css
+├── POA_primers/
+│   ├── README.md
+|   └── poa_primer.py
+├── BCGs_de_Bruijn_Colorido/
+│   ├── README.md
+|   └── bcg_de_bruijn.snake
 ```
