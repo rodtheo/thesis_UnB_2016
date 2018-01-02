@@ -1,6 +1,6 @@
 # Repo
 
-This repository stores all the codes and pipelines produced to analyze the data of my dissertation entitled: [Comparative genomics of strains of Aspergillus _terreus_ aiming the production of lovastatin] (http://repositorio.unb.br/handle/10482/23117). The intent of the repository is to allow reproducibility of results obtained in the dissertation.
+This repository stores all the codes and pipelines produced to analyze the data of my Master thesis entitled: [Comparative genomics of strains of Aspergillus _terreus_ aiming the production of lovastatin] (http://repositorio.unb.br/handle/10482/23117). The intent of the repository is to allow reproducibility of results obtained in the dissertation.
 
 The structure of the repository follows the topics of the dissertation. That is, each section of the dissertation in which there was a need to produce a script will be a directory in this repository. It should be noted that routine tasks for data exploration, such as counting _reads_ in a BAM, visualizing mappings and codes to generate several figures did not have their scripts stored in this repo. The main goal of the repository is to store key codes as the pipelines used with [snakemake] (https://bitbucket.org/snakemake/snakemake/wiki/Home) to identify SNVs (single nucleotide variants) or codes related to the applied methodologies.
 
